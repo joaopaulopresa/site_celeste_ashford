@@ -93,7 +93,6 @@
 
           <div class="book-buttons">
             <a href="https://www.amazon.com/dp/B0GSPKQ23T" class="btn btn-primary" target="_blank" rel="noopener">Buy on Amazon</a>
-            <a href="#arc" class="btn btn-secondary">Read Sample</a>
           </div>
 
           <details class="content-notes">
@@ -222,9 +221,22 @@
         <div class="arc-download">
           <h3>Download Sample</h3>
           <p>Get the first three chapters free — no sign-up required.</p>
-          <div class="download-buttons">
-            <a href="assets/files/sample.pdf" class="btn btn-secondary" download>Download Sample (PDF)</a>
-            <a href="assets/files/sample.epub" class="btn btn-secondary" download>Download Sample (ePub)</a>
+
+          <div class="sample-selector">
+            <label for="sample-book" class="sample-label">Choose a book</label>
+            <select id="sample-book" class="sample-select">
+              <option value="tithe-of-thorns" selected>The Tithe of Thorns</option>
+              <option value="hollow-throne">The Hollow Throne</option>
+            </select>
+          </div>
+
+          <div class="download-buttons" id="sample-tithe-of-thorns">
+            <a href="assets/files/the-tithe-of-thorns-sample.pdf" class="btn btn-secondary" download>Download PDF</a>
+            <a href="assets/files/the-tithe-of-thorns-sample.epub" class="btn btn-secondary" download>Download ePub</a>
+          </div>
+          <div class="download-buttons" id="sample-hollow-throne" style="display:none;">
+            <a href="assets/files/the-hollow-throne-sample.pdf" class="btn btn-secondary" download>Download PDF</a>
+            <a href="assets/files/the-hollow-throne-sample.epub" class="btn btn-secondary" download>Download ePub</a>
           </div>
         </div>
 
@@ -244,7 +256,6 @@
               <label for="arc-book">Which book? <span class="optional">(optional)</span></label>
               <select id="arc-book" name="book">
                 <option value="">Any / All</option>
-                <option value="The Marrow Decree">The Marrow Decree</option>
                 <option value="The Tithe of Thorns">The Tithe of Thorns</option>
                 <option value="The Hollow Throne">The Hollow Throne</option>
               </select>

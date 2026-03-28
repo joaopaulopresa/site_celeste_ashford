@@ -42,6 +42,18 @@
   });
 })();
 
+/* ===== Sample book selector ===== */
+(function () {
+  const select = document.getElementById('sample-book');
+  if (!select) return;
+
+  select.addEventListener('change', function () {
+    document.getElementById('sample-tithe-of-thorns').style.display = 'none';
+    document.getElementById('sample-hollow-throne').style.display = 'none';
+    document.getElementById('sample-' + this.value).style.display = '';
+  });
+})();
+
 /* ===== ARC Form submit ===== */
 (function () {
   const form = document.getElementById('arc-form');
