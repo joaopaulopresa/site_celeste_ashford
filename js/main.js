@@ -42,6 +42,26 @@
   });
 })();
 
+/* ===== Download tracking ===== */
+(function () {
+  document.querySelectorAll('a[download]').forEach(function (link) {
+    link.addEventListener('click', function () {
+      var file = this.getAttribute('href').split('/').pop();
+      if (typeof navigator.sendBeacon === 'function') {
+        navigator.sendBeacon(
+          'https://cloudflareinsights.com/cdn-cgi/rum',
+          JSON.stringify({ event: 'download', file: file })
+        );
+      }
+      // Cloudflare Web Analytics automatic pageview-like tracking
+      if (window.__cfBeacon) {
+        var img = new Image();
+        img.src = '/cdn-cgi/rum?e=download&f=' + encodeURIComponent(file) + '&t=' + Date.now();
+      }
+    });
+  });
+})();
+
 /* ===== Sample book selector ===== */
 (function () {
   const select = document.getElementById('sample-book');
