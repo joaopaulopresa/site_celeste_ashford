@@ -69,7 +69,7 @@
 
   select.addEventListener('change', function () {
     document.getElementById('sample-tithe-of-thorns').style.display = 'none';
-    document.getElementById('sample-hollow-throne').style.display = 'none';
+    document.getElementById('sample-cruelest-quiet').style.display = 'none';
     document.getElementById('sample-' + this.value).style.display = '';
   });
 })();
